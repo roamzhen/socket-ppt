@@ -1,0 +1,120 @@
+.hint-words {
+	text-align: center;
+	line-height: 100px;
+	color: #000;
+}
+
+.back-broad {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	overflow: hidden;
+
+	.back-broad-inner {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}
+
+.user-controller {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 40px;
+
+	#follow_btn {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 40px;
+		height: 40px;
+		z-index: 10;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 0;
+		    height: 0;
+		    
+		    border-width: 0 40px 40px 0;
+		    border-style: solid;
+		    border-color: #fff #fff rgb(220,220,220) rgb(220,220,220);
+
+		    box-shadow: -1px 1px 1px rgba(0,0,0,0.3);
+
+		    -webkit-transition: -webkit-transform 0.4s;
+			-webkit-transform-origin: right top;
+			-webkit-transform: rotateX(180deg) rotateY(180deg);
+		}
+		
+		&.active {
+
+			&:before {
+				-webkit-transform: rotateX(0) rotateY(0);
+			}
+		}
+	}
+}
+.qrcode-wrap {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 300px;
+	height: 300px;
+	margin: -150px 0 0 -150px;
+	z-index: -10;
+	opacity: 0;
+
+	-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+
+	&.show {
+		opacity: 1;
+		z-index: 10;
+	}
+}
+
+.box{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: none;
+}
+
+.ppt-item1 .box1{
+	display: block;	
+}
+.ppt-item2 .box2{
+	display: block;
+}
+.ppt-item3 .box3{
+	display: block;
+}
+
+.ppt-item4 .box4{
+	display: block;
+}
+.ppt-item5 .box5{
+	display: block;
+}
+
+.ppt-item6 .box6{
+	display: block;
+}
+.ppt-item7 .box7{
+	display: block;
+}
+.ppt-item8 .box8{
+	display: block;
+}
+
+

@@ -1,0 +1,42 @@
+// mixin
+
+// sprite 1x 
+@mixin _sp($sp, $img) {
+  background: sprite-url($sp) no-repeat round(nth(sprite-position($sp, $img), 1)) round(nth(sprite-position($sp, $img), 2));
+  width: image-width(sprite-file($sp, $img));
+  height: image-height(sprite-file($sp, $img));
+  display: inline-block;
+}
+
+// sprite 2x 
+@mixin _sp2x($sp, $img) {
+  background: sprite-url($sp) no-repeat round(nth(sprite-position($sp, $img), 1))/2 round(nth(sprite-position($sp, $img), 2))/2;
+  background-size: image-width(sprite-path($sp))/2 auto;
+  width: image-width(sprite-file($sp, $img))/2;
+  height: image-height(sprite-file($sp, $img))/2;
+  display: inline-block;
+}
+
+// img
+@mixin _img($img, $base:"../img/") {
+  background:url($base+$img) no-repeat;
+  width: image-width($img);
+  height: image-height($img);
+  display: inline-block;
+}
+
+// img2x
+@mixin _img2x($img, $base:"../img/") {
+  background:url($base+$img) no-repeat;
+  width: image-width($img)/2;
+  height: image-height($img)/2;
+  background-size: image-width($img)/2 auto;
+  display: inline-block;
+}
+@mixin clearfixed(){ 
+    content: " "; 
+    clear: both;
+    display: table;
+    line-height: 0;
+    height: 0;
+}

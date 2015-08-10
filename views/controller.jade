@@ -1,0 +1,46 @@
+doctype html
+html
+  head
+    title Roam Socket.IO chat
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1')
+    meta(content='telephone=no', name='format-detection')
+    script(type='text/javascript', src='/socket.io/socket.io.js')
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+  body
+    section.back-broad
+      #ppt_list.back-broad-inner.ppt-item1
+        .ppt-item.box.box1
+          h1.hint-words Page 1
+        .ppt-item.box.box2
+          h1.hint-words Page 2
+        .ppt-item.box.box3
+          h1.hint-words Page 3
+        .ppt-item.box.box4
+          h1.hint-words Page 4
+        .ppt-item.box.box5
+          h1.hint-words Page 5
+        .ppt-item.box.box6
+          h1.hint-words Page 6
+        .ppt-item.box.box7
+          h1.hint-words Page 7
+        .ppt-item.box.box8
+          h1.hint-words Page 8
+    section.selector-wrap
+      #selector_list.selector-inner.scrollable
+        .select-item.box2
+          .select-item-inner
+            h1.hint-words Page 2
+        .select-item.box3
+          .select-item-inner
+            h1.hint-words Page 3
+        .select-item.box5
+          .select-item-inner
+            h1.hint-words Page 5
+        .select-item.box6
+          .select-item-inner
+            h1.hint-words Page 6
+      #drap_btn.drap-btn 
+    script(type='text/javascript', src='/js/zepto.js')
+    script(type='text/javascript', src='/js/controller.js')
