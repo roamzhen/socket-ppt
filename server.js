@@ -55,7 +55,7 @@ io.sockets.on('connection', function(socket) {
 			case 'view':
 				if(view_length != 0 && ppt.view.length === 0){
 					ppt.view.length = view_length;
-					socket.emit('screen-shower', ppt.view.page);
+					//socket.emit('screen-shower', ppt.view.page);
 				}
 
 				socket.emit('connected', {

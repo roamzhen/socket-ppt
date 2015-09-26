@@ -1,0 +1,200 @@
+.ppt-item {
+
+	.bold {
+		font-weight: bold;
+	}
+
+	.h-center {
+		text-align: center;
+	}
+	.h-left {
+		text-align: left;
+	}
+	.h-right {
+		text-align: right;
+	}
+	.innerblock {
+		display: inline-block; 
+		vertical-align: middle;
+	}
+
+	.v-before, .v-after, .v-css, .v-canvas {
+      	position: relative;
+    	padding-bottom: 50px;
+    }
+
+    .v-before:after, .v-after:after , .v-css:after, .v-canvas:after {
+      	position: absolute;
+      	left: 0;
+      	bottom: 0%;
+      	width: 100%;
+      	line-height: 50px;
+      	font-size: 30px;
+      	color: #3f3f3f;
+      	text-align: center;
+    }
+
+    .v-before:after {
+    	content: "before";
+    }
+
+    .v-after:after {
+    	content: "after";
+    }
+
+    .v-css:after {
+    	content: "css";
+    }
+
+    .v-canvas:after {
+    	content: "canvas";
+    }
+
+	.flexbox {
+		display: -webkit-flex;
+		display: flex;
+		
+		&.v-center {
+			-webkit-flex-flow: column;
+			flex-flow: column;
+			-webkit-justify-content: center;
+			justify-content: center;
+			-webkit-align-content: center;
+			align-content: center;
+		}
+
+		&.ajust-height {
+			min-height: 80%;
+		}
+	}
+
+	.bottom-line {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 3px;
+		background-size: 100% 100%;
+	}
+
+	.m-wrap {
+		box-sizing: border-box;
+		width: 100%;
+		height: 100%;
+		padding: 20px;
+		overflow: scroll;
+	}
+
+	h1 {
+		position: relative;
+		font-size: 45px;
+		line-height: 1.6;
+		margin-bottom: 0.5rem;
+	}
+
+	h2 {
+		position: relative;
+		font-size: 32px;
+		line-height: 1.6;
+		margin-bottom: 0.5rem;
+	}
+
+	h3 {
+		position: relative;
+		font-size: 26px;
+		line-height: 1.6;
+		margin-bottom: 0.5rem;
+	}
+
+	h4 {
+		font-size: 18px;
+		line-height: 1.5;
+	}
+
+	p {
+		font-size: 16px;
+	}
+
+	h5 {
+		position: relative;
+		font-size: 120px;
+		line-height: 1.6;
+		margin-bottom: 0.5rem;
+	}
+
+	h6 {
+		position: relative;
+		font-size: 40px;
+		line-height: 1.6;
+		margin-bottom: 0.5rem;
+	}
+
+	.content-wrap {
+		padding: 10px 0;
+	}
+
+	.content-row {
+	}
+
+	@media (max-width: 600px) {
+		h1 {
+			font-size: 45px;
+		}
+
+		h2 {
+			font-size: 22px;
+		}
+
+		h3 {
+			font-size: 18px;
+		}
+
+		h4 {
+			font-size: 16px;
+		}
+
+		p {
+			font-size: 12px;
+		}
+
+		h5 {
+			font-size: 60px;
+		}
+
+		h6 {
+			font-size: 26px;
+		}
+	}
+
+	@media (min-width: 600px) {
+		.m-wrap {
+			padding: 40px;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.m-wrap {
+			padding: 40px;
+		}
+
+		h1 {
+			font-size: 55px;
+		}
+
+		h2 {
+			font-size: 45px;
+		}
+
+		h3 {
+			font-size: 35px;
+		}
+
+		h4 {
+			font-size: 26px;
+		}
+
+		p {
+			font-size: 20px;
+		}
+	}
+}

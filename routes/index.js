@@ -9,6 +9,10 @@ module.exports = function (app) {
     res.render('view');
 
   });
+  app.get('/roamye', function(req, res){
+    res.render('roamye');
+
+  });
   app.get('/controller', function(req, res){
     res.render('controller');
   });

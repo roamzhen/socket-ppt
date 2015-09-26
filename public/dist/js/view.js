@@ -8,6 +8,8 @@
 
 	var $ppt_list = $('#ppt_list');
 	var $selector_wrap = $('.selector-wrap');
+	var $ppt_page = $('.ppt-page');
+	var $qrcode_wrap = $('.qrcode-wrap');
 	var $follow_btn = $('#follow_btn');
 
 	var $ppt_list_native = $ppt_list[0];
@@ -16,6 +18,7 @@
 	}
 
 	var move_page = 0;
+	var backitem = null;
 
 	/* flag var */
 	var internet_connect = false;
@@ -62,9 +65,9 @@
 			var disX = nowX - this.startX;
 
 			if( disX > 100 ){
-				this.callback.moveNext && this.callback.moveNext();
-			} else if ( disX < -100 ){
 				this.callback.movePre && this.callback.movePre();
+			} else if ( disX < -100 ){
+				this.callback.moveNext && this.callback.moveNext();
 			}
 		}
 		TouchHandler.prototype.toucncancel = function (e) {
@@ -74,16 +77,37 @@
 		return new TouchHandler(wrapper, opt);
 	}($(document.body), {
 		movePre : function() {
-		  if(!isFollow && move_page < ppt_model.length-1){
-		   moveTo( move_page + 1 );
-		  }
-		},
-		moveNext : function() {
 		  if(!isFollow && move_page > 0){
 		    moveTo( move_page - 1 );
 		  }
+		},
+		moveNext : function() {
+		  if(!isFollow && move_page < ppt_model.length-1){
+		   moveTo( move_page + 1 );
+		  }
 		}
 	}));
+
+	$(window).on('keydown',function(e){
+		var keycode = e.keyCode;
+		switch(keycode){
+			case 37:
+				if(!isFollow && move_page > 0){
+				    moveTo( move_page - 1 );
+				}
+				break;
+			case 39:
+				if(!isFollow && move_page < ppt_model.length-1){
+				   moveTo( move_page + 1 );
+				}
+				break;
+			case 81:
+				$qrcode_wrap.toggleClass('show');
+				break;
+			default:
+				break;
+		}
+	});
 
 	var Qrcode = {
 		hadSetQrcoded : false,
@@ -103,9 +127,9 @@
 			});
 
 			if(internet_connect){
-				qrcode.makeCode("http://119.29.26.68:3000/view.html");
+				qrcode.makeCode("http://119.29.26.68:3000/view");
 			}else {
-				qrcode.makeCode("http://"+ppt_model.local_ip + ":3000/controller.html");
+				qrcode.makeCode("http://"+ppt_model.local_ip + ":3000/view");
 			}
 
 			Qrcode.hadSetQrcoded = true;
@@ -151,12 +175,32 @@
 		}
 	});
 
-	stopWindowDrag();
 
 	//切换函数
 	function moveTo (page) {
+		backitem && backitem.removeClass('left-page-out');
+		backitem && backitem.removeClass('right-page-out');
+		backitem = $('.box'+(move_page+1));
+		var nowitem = $('.box'+(page+1));
+
+		backitem.removeClass('left-page-in');
+		backitem.removeClass('right-page-in');
+
+		if(page>move_page){
+			console.log('bigger');
+			backitem.addClass('left-page-out');
+			nowitem.addClass('left-page-in');
+		}else if(page < move_page){
+			console.log('smaller');
+			backitem.addClass('right-page-out');
+			nowitem.addClass('right-page-in');
+		}else {
+			nowitem.addClass('left-page-in');
+		}
+
 		move_page = page;
 		console.log(page);
+		$ppt_page.html(page+1);
 
 		var p_index = $ppt_list_native.className.indexOf('ppt-item'),
 			pl_index =$ppt_list_native.className.indexOf(' ',p_index);
@@ -170,36 +214,6 @@
 
 		$ppt_list.removeClass(back_class);
 		$ppt_list.addClass('ppt-item'+(page+1));
-	}
-
-	function stopWindowDrag(){
-
-	  var selScrollable = '.scrollable';
-	  // Uses document because document will be topmost level in bubbling
-	  $(document).on('touchmove',function(e){
-	    e.preventDefault();
-	  });
-	  // Uses body because jQuery on events are called off of the element they are
-	  // added to, so bubbling would not work if we used document instead.
-	  $('body').on('touchstart', selScrollable, function(e) {
-	    if (e.currentTarget.scrollTop === 0) {
-	      e.currentTarget.scrollTop = 1;
-	    } else if (e.currentTarget.scrollHeight === e.currentTarget.scrollTop + e.currentTarget.offsetHeight) {
-	      e.currentTarget.scrollTop -= 1;
-	    }
-	  });
-	  // Stops preventDefault from being called on document if it sees a scrollable div
-	  $('body').on('touchmove', selScrollable, function(e) {
-	    e.stopPropagation();
-	  });
-	  $('body').on('touchmove', selScrollable, function(e) {
-	    // Only block default if internal div contents are large enough to scroll
-	    // Warning: scrollHeight support is not universal. (http://stackoverflow.com/a/15033226/40352)
-	    if($(this)[0].scrollHeight > $(this).height()) {
-	        e.stopPropagation();
-	    }
-
-	});
 	}
 
 }(window));

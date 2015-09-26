@@ -1,32 +1,540 @@
 doctype html
 html
   head
-    title Roam Socket.IO chat
+    title Socket.ppt
     meta(charset='UTF-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1')
     meta(content='telephone=no', name='format-detection')
     script(type='text/javascript', src='/socket.io/socket.io.js')
     link(rel='stylesheet', type='text/css', href='/css/style.css')
+    style(rel='stylesheet', type='text/css').
+      .isux-blue {
+        color: #00cfff;
+      }
+      .isux-orange {
+        color: #ffa900;
+      }
+      .isux-red {
+        color: #ff3f85;
+      }
+      .isux-green {
+        color: #9bbb1b;
+      }
+      .title-bw {
+        background-color:#000; color: #fff;
+      }
+      .title-each {
+        position: relative;
+        color: #0f0f0f;
+        padding-right: 60px;
+        display: inline-block;
+      }
+      .title-ib {
+        display: inline-block;
+        padding: 0 50px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .pos-lt {
+        position: absolute !important;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0 !important;
+
+      }
+      .bottom-line {
+        background-image:url(./img/roamye/isux-bottom.png);
+      }
+      .isux-logo {
+        background-color:#000;padding:8px 22px;height:34px;width:auto;
+      }
+
+      .max-1000 {
+        margin: 10px auto 0;
+        max-width: 1000px;
+      }
+
+      .fix-height {
+        height: 100%;
+        vertical-align: middle;
+      }
+      .fix-width {
+        max-width: 80%;
+      }
+      .content-row {
+      }
+      .a-item {
+        padding-top: 10px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .m-item {
+        padding-top: 20px;
+        height: 250px;
+        display: inline-block;
+        vertical-align: middle;
+
+      }
+      .n-item {
+        padding-top: 20px;
+        height: 330px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .b-item {
+        padding-top: 20px;
+        height: 500px;
+        line-height: 500px;
+        display: inline-block;
+        vertical-align: middle;
+        padding-right: 5px;
+        padding-top: 5px;
+
+      }
+
+      .bb-item {
+        padding-top: 20px;
+        height: 700px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .b-item img {
+        vertical-align: middle;
+      }
+
+      .b-item .inner-to {
+        vertical-align: middle;
+        font-size: 30px;
+        display: inline-block;
+        margin: 0 10px;
+      }
+
+      .inner-tilte {
+        padding-left: 20px;
+      }
+
+      .left-page-in {
+        display: block;
+        -webkit-animation: left-in 0.5s forwards !important;
+      }
+      .left-page-out {
+        display: block;
+        -webkit-animation: left-out 0.5s forwards !important;
+      }
+
+      .right-page-in {
+        display: block;
+        -webkit-animation: right-in 0.5s forwards !important;
+      }
+      .right-page-out {
+        display: block;
+        -webkit-animation: right-out 0.5s forwards !important;
+      }
   body
     section.back-broad
       #ppt_list.back-broad-inner.ppt-item1
         .ppt-item.box.box1
-          h1.hint-words Page 1
+          .m-wrap.flexbox.v-center.h-center
+            h1.bold.title-bw 实习工作汇报
+              span.bottom-line
+            h4.h-right.sub-wrap
+              img.isux-logo(src='./img/roamye/isux-logo.png')
+              br
+              span ISUX增值前端开发组
+              br
+              span 叶振鹏(roamye)
+            h1.title-bw.pos-lt http://119.29.26.68:3000/view
         .ppt-item.box.box2
-          h1.hint-words Page 2
+          .m-wrap.v-center
+            h2
+              span.title-each How to make a Roam
+                span.bottom-line
+            .content-wrap.flexbox.v-center.ajust-height
+              .content-row.h-center
+                h3 华南农业大学 <span class='bold isux-blue'>软件工程专业</span>
+                h3 <span class='bold isux-green'>工作室全能打杂</span>/网络部部长/网易前端实习生
+                h3 爱吃爱玩/<span class="bold isux-red">喜好折腾造玩具</span>/得闲饮茶
+                h3 一批伙伴/两个项目/<span class="bold isux-orange">纯粹而繁忙的日子</span>
+                .m-item
+                  img.fix-height(src='./img/roamye/myhead.jpg')
         .ppt-item.box.box3
-          h1.hint-words Page 3
+          .m-wrap.v-center
+            h2
+              span.title-each 那些年造过的玩具
+                span.bottom-line
+            .content-wrap.h-center.flexbox.v-center.ajust-height
+              h3 单人制作
+              h4 大二
+              h4 Canvas游戏 (简单物理系统 碰撞监测) 模拟iOS系统
+              .content-row
+                div
+                  .b-item
+                    img.fix-height(src='./img/roamye/toy-1.jpg')
+                  .b-item
+                    img.fix-height(src='./img/roamye/toy-2.jpg')
+                  .b-item
+                    img.fix-height(src='./img/roamye/toy-3.jpg')
         .ppt-item.box.box4
-          h1.hint-words Page 4
+          .m-wrap.v-center
+            h2
+              span.title-each 那些年有趣的功能页
+                span.bottom-line
+            .content-wrap.h-center.flexbox.v-center.ajust-height
+              .content-row
+                h3 全景游华农及<span class='bold'>360度全景</span>宿舍
+                h4 大二下
+                h4 个人完成 (ThreeJs 全景API)
+                div
+                  .b-item
+                    img.fix-height(src='./img/roamye/pano-0.jpg')
+                  .b-item
+                    img.fix-height(src='./img/roamye/pano-1.jpg')
+                  .b-item
+                    img.fix-height(src='./img/roamye/pano-2.jpg')
         .ppt-item.box.box5
-          h1.hint-words Page 5
+          .m-wrap.v-center
+            h2
+              span.title-each 项目时光
+                span.bottom-line
+            .content-wrap.h-center.flexbox.v-center.ajust-height
+              .content-row
+                h3 爱分享 前端
+                h4 大三上
+                h4 SeaJs handleBar Canvas上传压缩
+                div
+                  .b-item
+                    img.fix-height(src='./img/roamye/ishare-0.jpg')
+                  .b-item
+                    img.fix-height(src='./img/roamye/ishare-1.jpg')
+                  .b-item
+                    img.fix-width(src='./img/roamye/ishare-qrcode.jpg')
         .ppt-item.box.box6
-          h1.hint-words Page 6
+          .m-wrap.flexbox.v-center.h-center
+            h1.bold.title-bw.title-ib 项目产出
+              span.bottom-line
+
         .ppt-item.box.box7
-          h1.hint-words Page 7
+          .m-wrap.v-center
+            h2
+              span.title-each 项目产出
+                span.bottom-line
+            .content-wrap.h-center.flexbox.v-center.ajust-height
+              .content-row
+                h2 实习了40多天，期间共完成 <span class='bold isux-blue'>26</span> 个需求
+                h3 主要负责<span class='bold isux-red'>QQ健康</span>项目的基础页面和少量活动页
+                h3 学习了Jade Sass 以及在动画方面做了大量的尝试
+                div
+                  .b-item
+                    img.fix-height(src='./img/roamye/pkv2-history-new.gif')
+                  .b-item
+                    img.fix-height(src='./img/roamye/vendor-breath.gif')
+                  .b-item
+                    img.fix-height(src='./img/roamye/vendor-water.gif')
         .ppt-item.box.box8
-          h1.hint-words Page 8
+          .m-wrap.v-center
+            h2
+              span.title-each QQ健康首页改版-入口动画
+                span.bottom-line
+            .content-wrap.h-center.flexbox.v-center.ajust-height
+              .content-row
+                h3.isux-green 项目名称
+                h2 QQ健康首页改版-入口动画
+                h3.isux-blue 项目介绍
+                h3 为健康首页的按钮添加动画
+                h3 与设计师一起做了多种方案的尝试
+                h3 设计师3种，自己提出2种，最后选出4种
+                div
+                  .b-item
+                    img.fix-height(src='./img/roamye/file-all-animation.gif')
+                  .b-item
+                    img.fix-height(src='./img/roamye/slide-animation.gif')
+                  .b-item
+                    img.fix-height(src='./img/roamye/show-animation.gif')
+                  .m-item
+                    img.fix-height(src='./img/roamye/health-try.png')
+        .ppt-item.box.box9
+          .m-wrap.v-center
+            h2
+              span.title-each QQ健康首页改版-入口动画
+                span.bottom-line
+            .content-wrap.h-center.flexbox.v-center.ajust-height
+              .content-row
+                h3 最后确定了一种效果
+                h3 应用到了新版健康的首页
+                .b-item
+                  video.fix-height(id="video-lovepackage",preload="auto",src="./img/roamye/video/health-icon-ani.mp4")
+                  
+        .ppt-item.box.box10
+          .m-wrap.v-center
+            h2
+              span.title-each 数据详情页改版-天气
+                span.bottom-line
+            .content-wrap.h-center.flexbox.v-center.ajust-height
+              .content-row
+                h3.isux-green 项目名称
+                h2 数据详情页设计优化-天气
+                h3.isux-blue 项目介绍
+                h3 将数据详情页风格修改为一致的一次改版
+                div
+                  .b-item.v-before
+                    img.fix-height(src='./img/roamye/weather-sun.jpg')
+                  .b-item.v-after
+                    img.fix-height(src='./img/roamye/vendor-weather-sun.png')
+        .ppt-item.box.box11
+          .m-wrap.v-center
+            h2
+              span.title-each 数据详情页改版-天气
+                span.bottom-line
+            .content-wrap.h-center.flexbox.v-center.ajust-height
+              h3 拿到设计稿以后，与之前版本作比较，很快还原出静态页面
+              .content-row
+                div
+                  .b-item.v-before
+                    img.fix-height(src='./img/roamye/weather-rain.jpg')
+                  .b-item.v-after
+                    img.fix-height(src='./img/roamye/weather-rain-new.jpg')
+        .ppt-item.box.box12
+          .m-wrap.v-center
+            h2
+              span.title-each 数据详情页改版-天气
+                span.bottom-line
+            .content-wrap.b-item.flexbox.v-center.h-center.ajust-height
+              h6 It's Enough ?
+              h5 Not !
+        .ppt-item.box.box13
+          .m-wrap.v-center
+            h2
+              span.title-each 数据详情页改版-天气
+                span.bottom-line
+            .content-wrap.v-center.h-center.flexbox.v-center.ajust-height
+              h3 于是我与设计师和产品一起商量讨论后
+              h2 用CSS3写了下雨和下雪的DEMO
+              div
+                .b-item
+                  img.fix-height(src='./img/roamye/vendor-weather-rain.gif')
+                .b-item
+                  img.fix-height(src='./img/roamye/vendor-weather-snow.gif')
+                .b-item
+                  img.fix-height(src='./img/roamye/vendor-weather-sand.gif')
+        .ppt-item.box.box14
+          .m-wrap.v-center
+            h2
+              span.title-each 数据详情页改版-天气
+                span.bottom-line
+            .content-wrap.h-center
+              h3 应设计师要求，加多雨点了，但马上就丢帧了
+              img.fix-width(src='./img/roamye/test-word-1.jpg')
+              h3 对比了一下百度的下雨效果
+              img.fix-width(src='./img/roamye/baidu-rain.gif')
+              h3 果然，Canvas才是正义 ~
+              
+        .ppt-item.box.box15
+          .m-wrap.v-center
+            h2
+              span.title-each 数据详情页改版-天气
+                span.bottom-line
+            .content-wrap.h-center
+              h2 完成了Canvas版本
+              h3 并抽象出运用Json进行调节的控件
+              h3 仿照rem的原理，改变雨点大小
+              h3 比较下雨页Css3与Canvas的效率
+              .a-item.v-css
+                img.fix-width(src='./img/roamye/test-word-1.jpg')
+              .a-item.v-canvas
+                img.fix-width(src='./img/roamye/test-word-2.jpg')
+              h3 然而下雪页并没有什么区别
+              .a-item.v-css
+                img.fix-width(src='./img/roamye/snow-css.jpg')
+              .a-item.v-canvas
+                img.fix-width(src='./img/roamye/snow-canvas.jpg')
+
+        .ppt-item.box.box16
+          .m-wrap.v-center
+            h2
+              span.title-each 数据详情页改版-天气
+                span.bottom-line
+            .content-wrap.flexbox.v-center.h-center.ajust-height
+              h3 开发时间充裕，不含交互的话Canvas完胜
+              h3 但假如动画元素少，形变少，选用CSS3方便
+              h2 根据情况，结合使用
+              h4 <a class="isux-blue" target="_blank" href="http://119.29.26.68/health/html/vendor/vendor-weather.html">http://119.29.26.68/health/html/vendor/vendor-weather.html</a>
+              div
+                .b-item.v-before
+                  img.fix-height(src='./img/roamye/weather-rain.jpg')
+                .b-item.v-after
+                  img.fix-height(src='./img/roamye/vendor-weather-rain.gif')
+        .ppt-item.box.box17
+          .m-wrap.flexbox.v-center.h-center
+            h1.bold.title-bw.title-ib 团队贡献
+              span.bottom-line
+        .ppt-item.box.box18
+          .m-wrap.v-center
+            h2
+              span.title-each ISUX官网Blog PC版改版
+                span.bottom-line
+            .content-wrap.h-center.flexbox.v-center.ajust-height
+              h4 从零开始玩Wordpress
+              h4 运用世界上最好的语言PHP
+              h4 样式结构修改，添加调试插件~
+              
+              .max-1000
+                  img.fix-width(src='./img/roamye/isux-blog.gif')
+        .ppt-item.box.box19
+          .m-wrap.v-center
+            h2
+              span.title-each 设计管理中心页面
+                span.bottom-line
+            .content-wrap.h-center.flexbox.v-center.ajust-height
+              h3 业余时间完成了设计管理中心的一些页面需求
+              .bb-item
+                img.fix-height(src='./img/roamye/sheguan.jpg')
+
+        .ppt-item.box.box20
+          .m-wrap.v-center
+            h2
+              span.title-each 设计管理中心页面
+                span.bottom-line
+            .content-wrap.h-center.flexbox.v-center.ajust-height
+              h3 完成了设计管理中心的一些页面需求
+              .b-item
+                img.fix-height(src='./img/roamye/sheguan-1.jpg')
+                img.fix-height(src='./img/roamye/sheguan-2.jpg')
+        .ppt-item.box.box21
+          .m-wrap.v-center
+            h2
+              span.title-each socket-ppt
+                span.bottom-line
+            .content-wrap.h-center.flexbox.v-center.ajust-height
+              h3 业余的时间，我学习NodeJs，边学边做
+              h3 多屏幕同步、随时回看、手机控制、备注
+              h3 于是就从零开始造出现在这个玩具
+              h3 放上Github 开源的力量
+              .m-item
+                img.fix-width(src='./img/roamye/socket-ppt-ex.png')
+        .ppt-item.box.box22
+          .m-wrap.flexbox.v-center.h-center
+            h1.bold.title-bw.title-ib 公司比赛
+              span.bottom-line
+        .ppt-item.box.box23
+          .m-wrap.v-center
+            h2
+              span.title-each 第六届创意马拉松 Hackthon
+                span.bottom-line
+            .content-wrap.h-center.flexbox.v-center.ajust-height
+              h3 两天时间，帮公益组织做出一个微信公众号及内部功能
+              h3 与其他组的前端合作，港科大同学加入，英文沟通
+              div
+                img.fix-width(src='./img/roamye/create-6.jpg')
+        .ppt-item.box.box24
+          .m-wrap.v-center
+            h2
+              span.title-each 第六届创意马拉松 Hackthon
+                span.bottom-line
+            .content-wrap.h-center.flexbox.v-center.ajust-height
+              h3 我兼任了设计以及所有展示页的前端
+              h3 会后与评委交流后，收获了很多
+              h3 总结: 透过需求看到真正的需要
+              div
+                img.fix-width(src='./img/roamye/aifen-apply.gif')
+                img.fix-width(src='./img/roamye/aifen-check.jpg')
+                img.fix-width(src='./img/roamye/aifen-share.gif')
+                img.fix-width(src='./img/roamye/aifen-rank.gif')
+        .ppt-item.box.box25
+          .m-wrap.v-center
+            h2
+              span.title-each 创益24小时
+                span.bottom-line
+            .content-wrap.h-center.flexbox.v-center.ajust-height
+              h3 <span class='isux-green'>184</span> 名来自公司内部不同事业群的Q哥Q妹
+              h3 组成了 <span class='isux-red'>64</span> 支队伍参赛，覆盖七大事业群
+              h3 最后得到<span class='isux-orange'>二等奖</span>，项目成为<span class='isux-blue'>第一批</span>准备落地的项目
+              h3 爱心包裹 捐款 传播 共鸣 直接帮助or<span class='isux-green'>种子</span>
+              div
+                .b-item
+                  img.fix-height(src='./img/roamye/create24-2.jpg')
+                .m-item
+                  img.fix-height(src='./img/roamye/lp-qrcode.jpg')
+
+        .ppt-item.box.box26
+          .m-wrap.v-center
+            h2
+              span.title-each 创益24小时
+                span.bottom-line
+            .content-wrap.h-center.flexbox.v-center.ajust-height
+              h3 四张静态设计稿,构想如何串联起一个故事
+              h3 创造设计稿 无翻页体验 Rem布局
+              h3 与用户交互，让用户投入
+              h4 <a class="isux-blue" target="_blank" href="http://roamzhen.github.io/product/galaxy/html/">roamzhen.github.io/product/galaxy/html/</a>
+              .b-item
+                video.fix-height(id="video-lovepackage",preload="auto",src="./img/roamye/video/lovepackage.mp4")
+        .ppt-item.box.box27
+          .m-wrap.flexbox.v-center.h-center
+            h1.bold.title-bw.title-ib 我的更多
+              span.bottom-line
+        .ppt-item.box.box28
+          .m-wrap.v-center
+            h2
+              span.title-each 我的玩具集中营
+                span.bottom-line
+            .content-wrap.flexbox.v-center.h-center.ajust-height
+              h3 我的玩具集中营
+              h4 <a class="isux-blue" target="_blank" href='http://roamzhen.github.io'>roamzhen.github.io</a>
+              h4 <a class="isux-blue" target="_blank" href='http://roamzhen.github.io/product/qixi/'>roamzhen.github.io/product/qixi/</a>
+              iframe.max-1000(width='90%',height='500px',src='http://roamzhen.github.io',style="border:0;")
+        .ppt-item.box.box29
+          .m-wrap.v-center
+            h2
+              span.title-each 我的想法
+                span.bottom-line
+            .content-wra.flexbox.v-center.h-center.ajust-height
+              h1 Stay <span class='isux-blue'>Curious</span>
+              h2 Keep <span class='isux-red'>Moving On</span>
+        .ppt-item.box.box30
+          .m-wrap.v-center
+            h2
+              span.title-each 我最近的玩具
+                span.bottom-line
+            .content-wrap.flexbox.v-center.h-center.ajust-height
+              h3 <span class='isux-green'>Reactjs</span> 与 <span class='isux-red'>React-native</span>
+              h4 <span class='isux-blue'>Virtual DOM</span> (减少Dom改变), <span class='isux-blue'>FLUX</span> (单向数据流)
+              h4 Web Components -> <span class='isux-blue'>跨终端</span> Components
+              h4 <span class='isux-orange'>Ploymer</span> 完整封闭的沙盒 / <span class='isux-orange'>React</span> 粗略开放的沙盒
+              .b-item
+                  img.fix-height(src='./img/roamye/reactjs.jpg')
+                  img.fix-height(src='./img/roamye/react-native.jpg')
+        .ppt-item.box.box31
+          .m-wrap.v-center
+            h2
+              span.title-each 实习感想
+                span.bottom-line
+            .content-wrap.flexbox.v-center.h-center.ajust-height
+              h2 <span class='isux-orange'>沟通</span> 思考 分享
+              h3 WHAT <span class='isux-green bold'>WHY</span> HOW
+              h2 学习 积累 <span class='isux-blue'>沉淀</span>
+        .ppt-item.box.box32
+          .m-wrap.v-center
+            h2
+              span.title-each Last~~
+                span.bottom-line
+            .content-wrap.flexbox.v-center.h-center.ajust-height
+              h3 鹅厂棒棒哒~~
+              div
+                img.m-item.fix-height(src='./img/roamye/final-create24-1.jpg')
+                img.m-item.fix-height(src='./img/roamye/final-create24.jpg')
+                img.m-item.fix-height(src='./img/roamye/final-health_build_cup.jpg')
+                img.m-item.fix-height(src='./img/roamye/final-shouge.jpg')
+              div
+                img.m-item.fix-height(src='./img/roamye/final-health-img.jpg')
+                img.m-item.fix-height(src='./img/roamye/final-duola.jpg')
+                img.m-item.fix-height(src='./img/roamye/final-wangnima.jpg')
+                img.m-item.fix-height(src='./img/roamye/final-hackthon.jpg')
+              br
+              h1 Nice To meet U <img class='isux-logo' src='./img/roamye/isux-logo.png'/>
+    aside.ppt-page 1
     aside.user-controller
       #follow_btn.active
     aside.qrcode-wrap
@@ -34,3 +542,9 @@ html
     script(type='text/javascript', src='/js/zepto.js')
     script(type='text/javascript', src='/js/qrcode.min.js')
     script(type='text/javascript', src='/js/view.js')
+    script.
+      $('video').each(function(){
+        $(this).on('click',function(){
+          $(this)[0].play();
+        });
+      });

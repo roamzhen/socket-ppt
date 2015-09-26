@@ -14,6 +14,8 @@
 
   var ppt_list = $ppt_list[0];
 
+  var backitem = null;
+
   var ppt_model = {
   }
 
@@ -98,8 +100,7 @@
   });
 
   socket.on('move-to',function (page) {
-    ppt_model.page = page;
-    moveTo(ppt_model.page);
+    moveTo(page);
   });
 
   /*
@@ -125,6 +126,30 @@
 
 
   function moveTo (page) {
+
+    backitem && backitem.removeClass('left-page-out');
+    backitem && backitem.removeClass('right-page-out');
+    backitem = $('.box'+(ppt_model.page+1));
+    var nowitem = $('.box'+(page+1));
+
+    console.log(backitem);
+    console.log(nowitem);
+
+    backitem.removeClass('left-page-in');
+    backitem.removeClass('right-page-in');
+
+    if(page>ppt_model.page){
+      console.log('bigger');
+      backitem.addClass('left-page-out');
+      nowitem.addClass('left-page-in');
+    }else if(page < ppt_model.page){
+      console.log('smaller');
+      backitem.addClass('right-page-out');
+      nowitem.addClass('right-page-in');
+    }else {
+      nowitem.addClass('left-page-in');
+    }
+
     ppt_model.page = page;
     console.log(page);
 
@@ -145,7 +170,7 @@
         var new_select_item = document.createElement('div');
         new_select_item.className = 'select-item box' + i ;
         new_select_item.innerHTML = '<div class="select-item-inner">'+
-  					'<h1 class="hint-words">Page ' + i + '</h1>' +
+  					'<h1 class="hint-words">' + i + '</h1>' +
   				'</div>';
 
         $(new_select_item).on('click', (function(i){
@@ -154,8 +179,8 @@
           }
     	  }(i)));
 
-        if(select_item[i-1] != null){
-          $(new_select_item).insertBefore(select_item[j]);
+        if(number != -1){
+          $(new_select_item).insertAfter($('.select-item.box'+(i-1)));
         }else{
           $selector_list.append(new_select_item);
         }
@@ -199,6 +224,7 @@
     return s_str.slice(slice_str.length);
   }
 
+  /* my change of default prototype */
   function stopWindowDrag(){
 
     var selScrollable = '.scrollable';
@@ -215,10 +241,6 @@
         e.currentTarget.scrollTop -= 1;
       }
     });
-    // Stops preventDefault from being called on document if it sees a scrollable div
-    $('body').on('touchmove', selScrollable, function(e) {
-      e.stopPropagation();
-    });
     $('body').on('touchmove', selScrollable, function(e) {
       // Only block default if internal div contents are large enough to scroll
       // Warning: scrollHeight support is not universal. (http://stackoverflow.com/a/15033226/40352)
@@ -226,7 +248,8 @@
           e.stopPropagation();
       }
 
-  });
+    });
   }
+
 
 }(window));

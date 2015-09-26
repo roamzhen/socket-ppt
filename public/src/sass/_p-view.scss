@@ -46,7 +46,7 @@
 		    
 		    border-width: 0 40px 40px 0;
 		    border-style: solid;
-		    border-color: #fff #fff rgb(220,220,220) rgb(220,220,220);
+		    border-color: #fff #fff rgba(220,220,220,0.8) rgba(220,220,220,0.8);
 
 		    box-shadow: -1px 1px 1px rgba(0,0,0,0.3);
 
@@ -62,6 +62,17 @@
 			}
 		}
 	}
+}
+
+.ppt-page {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	padding: 10px 20px;
+	font-size: 30px;
+
+	background-color: #000;
+	color: #fff;
 }
 .qrcode-wrap {
 	position: absolute;
@@ -88,33 +99,19 @@
 	top: 0;
 	bottom: 0;
 	display: none;
+
+	background-color: #f0f0f0;
 }
 
-.ppt-item1 .box1{
-	display: block;	
-}
-.ppt-item2 .box2{
+.left-page-in {
 	display: block;
-}
-.ppt-item3 .box3{
-	display: block;
+	-webkit-animation: show 0.5s forwards ;
 }
 
-.ppt-item4 .box4{
-	display: block;
-}
-.ppt-item5 .box5{
-	display: block;
-}
 
-.ppt-item6 .box6{
+.right-page-in {
 	display: block;
-}
-.ppt-item7 .box7{
-	display: block;
-}
-.ppt-item8 .box8{
-	display: block;
+	-webkit-animation: show 0.5s forwards ;
 }
 
 
